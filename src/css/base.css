@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hr {
+  width: 70%;
+  border: none;
+  border-bottom: 1px solid rgba(180, 180, 180, 0.61);
+}
+
+:root {
+  --bg-grey: #F6F1F1;
+  --light-blue: #19A7CE;
+  --dark-blue: #146C94;
+  --black: #000000;
+  --text-grey: rgb(70, 70, 70);
+}
