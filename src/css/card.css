@@ -1,7 +1,7 @@
 .user-section {
   background: var(--bg-grey);
   padding: 115px 40px 0;
-
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -29,6 +29,7 @@
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.61);
 
   margin-bottom: 40px;
+  padding: 0 15px;
 }
 
 

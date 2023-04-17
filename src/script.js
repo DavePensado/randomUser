@@ -18,11 +18,8 @@ form.addEventListener('submit', (e) => {
 
   e.currentTarget.children[0].value = ''
 
-  if(userQuantity > 0) {
-    userSection.classList.remove('user-section-height')
-  }
-  
 
+  
   userQuantity = inputValue;
 
   printUsers(userQuantity)
@@ -32,19 +29,24 @@ form.addEventListener('submit', (e) => {
 function printUsers(users) {
   userData(users)
     .then((data) => {
-      console.log(data.results)
+        if(userQuantity > 0) {
+          userSection.classList.remove('user-section-height')
+        }
 
       const users = data.results.map(el => createUserCard(el));
+      
       userSection.append(...users);
     
+    }, (err) => {
+      console.error(err)
     })
 }
 
 function createUserCard(userObj) {
-  const img = createElement('img', {className: ["user-img"], attribute: [{src: userObj.picture.large}]});
+  const img = createElement('img', {className: ["user-img"], attribute: [{src: userObj.picture.large ? userObj.picture.large : '../assets/img/user-icon.png'}]});
   const h2 = createElement('h2', {className: ["user-name"]}, `${userObj.name. first} ${userObj.name.last}`);
   const pLocation = createElement('p', {className: ["user-location"]}, userObj.location.city);
-  const h3 = createElement('h3', {className: ["user-contact"]}, 'contact');
+  const h3 = createElement('h3', {className: ["user-contact"]}, 'contacts:');
   const pEmail = createElement('p', {className: ["user-email"]}, userObj.email);
   const pPhone = createElement('p', {className: ["user-phone"]}, userObj.phone);
   const hr = createElement('hr', {className: ["hr"]});
